@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highscore – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>🏆 Highscore Board</h1>
+    <p>Hvem sidder på tronen? Spil Snake og kæmp om toppen!</p>
+  </div>
+
+  <section>
+    <div class="section-inner">
+
+      <!-- PERSONAL BEST -->
+      <div id="personal-best-section" style="display:none; margin-bottom:30px;">
+        <div class="card" style="max-width:400px; margin:0 auto; text-align:center; border:2px solid #00c853;">
+          <div style="font-size:0.85em; color:#666; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px;">Din personlige rekord</div>
+          <div style="font-size:2.8em; font-weight:bold; color:#00c853;" id="personal-best">0</div>
+          <a href="snake.html" class="btn btn-primary mt-15" style="width:auto; padding:10px 24px; font-size:14px;">Slå din rekord!</a>
+        </div>
+      </div>
+
+      <!-- LEADERBOARD TABLE -->
+      <div style="max-width: 700px; margin: 0 auto;">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th style="text-align:center; width:60px;">#</th>
+              <th>Spiller</th>
+              <th>Score</th>
+              <th>Dato</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <tr>
+              <td colspan="4" style="text-align:center; color:#999; padding:30px;">Indlæser scores...</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="text-align:center; margin-top:20px; font-size:0.85em; color:#999;">
+          Dine scores gemmes lokalt i browseren. Global leaderboard er under udvikling!
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-30">
+        <a href="snake.html" class="btn btn-primary" style="width:auto; padding:14px 35px; font-size:16px; display:inline-block;">
+          Spil og sæt highscore!
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Fun facts</h2>
+      <div class="grid-3">
+        <div class="card text-center">
+          <div style="font-size:2em; margin-bottom:8px;">🎮</div>
+          <strong style="font-size:1.2em; color:#1a1a2e;">7</strong>
+          <p style="font-size:0.88em;">Spillere på top-listen</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:2em; margin-bottom:8px;">🏅</div>
+          <strong style="font-size:1.2em; color:#1a1a2e;">520</strong>
+          <p style="font-size:0.88em;">Nuværende rekord</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:2em; margin-bottom:8px;">🔥</div>
+          <strong style="font-size:1.2em; color:#1a1a2e;">10 point</strong>
+          <p style="font-size:0.88em;">Per mad spist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🐍 SnakeFund &copy; 2026 — Lavet med passion af ITL-studerende</p>
+    <p>
+      <a href="Omos.html">Om os</a> &nbsp;|&nbsp;
+      <a href="kontakt.html">Kontakt</a> &nbsp;|&nbsp;
+      <a href="donate.html">Støt Nu</a>
+    </p>
+  </footer>
+
+  <script src="leaderboard.js"></script>
+
+</body>
+</html>
