@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opdateringer – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Kampagne Opdateringer</h1>
+    <p>Følg med i vores udviklingsproces – vi opdaterer løbende her.</p>
+  </div>
+
+  <section>
+    <div class="section-inner" style="max-width: 800px;">
+
+      <div class="update-item">
+        <div class="update-date">8. maj 2026</div>
+        <div class="update-title">🎮 Beta-version af Snake er nu online!</div>
+        <p>Vi er utroligt glade for at kunne annoncere, at vores første spillbare version af Snake nu er live på hjemmesiden. Du kan allerede nu prøve spillet, opnå score og se din placering på leaderboardet.</p>
+        <p style="margin-top:10px;">I denne version kan du:</p>
+        <ul style="padding-left:20px; color:#666; margin-top:8px; line-height:2;">
+          <li>Spille med pil-taster eller WASD</li>
+          <li>Se din score og personlige rekord</li>
+          <li>Konkurrere på den lokale highscore-liste</li>
+        </ul>
+        <p style="margin-top:10px;">Vi er allerede i gang med at bygge multiplayer-funktionen – hold øje med næste opdatering!</p>
+        <a href="snake.html">Spil nu →</a>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">1. maj 2026</div>
+        <div class="update-title">🎉 100 støtter – tusind tak!</div>
+        <p>En kæmpe milepæl er nået: vi har nu over 100 mennesker der har valgt at støtte SnakeFund! Det betyder alt for os og viser, at der er interesse for projektet.</p>
+        <p style="margin-top:10px;">Som tak til de første 100 støtter sender vi personlige mails ud med eksklusive digitale badges inden for de næste to dage. Tjek din indbakke!</p>
+        <p style="margin-top:10px;">Vi er nu 67% af vejen mod vores mål. Hjælp os i land med de sidste 33%!</p>
+        <a href="donate.html">Støt kampagnen →</a>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">22. april 2026</div>
+        <div class="update-title">🎨 Design og farvevalg afgjort</div>
+        <p>Efter en intern afstemning er vi blevet enige om det endelige design: grønt og mørkt navy. Grønt fordi det er klassisk Snake, mørkt fordi det giver en fed game-atmosfære.</p>
+        <p style="margin-top:10px;">Vi har brugt den seneste uge på at bygge hjemmesiden op, og vi er glade for resultatet. Fortæl os hvad du synes via kontakt-siden!</p>
+        <a href="kontakt.html">Giv os feedback →</a>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">15. april 2026</div>
+        <div class="update-title">🚀 Kampagnen er officielt lanceret!</div>
+        <p>I dag er vi super spændte at annoncere at SnakeFund er live. Vi er en gruppe ITL-studerende der tager det første store skridt mod at lave noget vi er stolte af.</p>
+        <p style="margin-top:10px;">Vores mål er 10.000 kr til at finansiere hosting, lyd, grafik og multiplayer-servere. Alle bidrag – store som små – gør en forskel.</p>
+        <p style="margin-top:10px;">Fortæl det til dine venner, del vores kampagne og hjælp os med at nå målet!</p>
+        <a href="forside.html">Se kampagnesiden →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOTIFICATION CTA -->
+  <section class="section-alt" style="text-align:center;">
+    <div class="section-inner">
+      <h2 style="color:#1a1a2e; font-size:1.6em; margin-bottom:10px;">Gå ikke glip af næste opdatering</h2>
+      <p style="color:#666; max-width:400px; margin:0 auto 20px;">Tilmeld dig vores nyhedsbrev og vær den første til at høre nyt om spillet.</p>
+      <div style="display:flex; gap:10px; max-width:420px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
+        <input type="email" placeholder="din@email.dk" style="flex:1; min-width:200px; padding:13px 15px; border:2px solid #e0e0e0; border-radius:8px; font-size:15px; font-family:inherit;">
+        <button onclick="signupNewsletter(this)" style="padding:13px 22px; background:#00c853; border:none; border-radius:8px; font-size:15px; font-weight:bold; cursor:pointer; color:#1a1a2e; white-space:nowrap;">Tilmeld</button>
+      </div>
+      <p id="signup-msg" style="color:#00a844; font-weight:bold; margin-top:12px; display:none;">✓ Du er tilmeldt!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>🐍 SnakeFund &copy; 2026 — Lavet med passion af ITL-studerende</p>
+    <p>
+      <a href="Omos.html">Om os</a> &nbsp;|&nbsp;
+      <a href="kontakt.html">Kontakt</a> &nbsp;|&nbsp;
+      <a href="donate.html">Støt Nu</a>
+    </p>
+  </footer>
+
+  <script>
+    function signupNewsletter(btn) {
+      btn.parentElement.style.display = 'none';
+      document.getElementById('signup-msg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
