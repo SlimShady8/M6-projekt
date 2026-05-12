@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Støt Nu – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Støt SnakeFund</h1>
+    <p>Din donation hjælper os med at bygge det ultimative Snake spil. Vælg et beløb og vælg din belønning.</p>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+
+        <!-- DONATION FORM -->
+        <div style="flex: 1; min-width: 300px;">
+          <div class="card">
+            <div id="thankYou" class="alert alert-success">
+              🎉 Tusind tak for din støtte! Du modtager en bekræftelse på e-mail.
+            </div>
+
+            <h2 style="color: #1a1a2e; margin-bottom: 20px;">Din donation</h2>
+
+            <form id="donateForm" onsubmit="handleDonate(event)">
+              <!-- BELØB -->
+              <div class="form-group">
+                <label>Vælg beløb</label>
+                <div class="amount-grid">
+                  <button type="button" class="amount-btn" onclick="selectAmount(this, 50)">50 kr</button>
+                  <button type="button" class="amount-btn active" onclick="selectAmount(this, 100)">100 kr</button>
+                  <button type="button" class="amount-btn" onclick="selectAmount(this, 250)">250 kr</button>
+                  <button type="button" class="amount-btn" onclick="selectAmount(this, 500)">500 kr</button>
+                </div>
+                <input type="number" id="customAmount" placeholder="Eller skriv eget beløb (kr)" min="1"
+                  oninput="clearAmountBtns()" style="margin-top: 8px;">
+              </div>
+
+              <!-- BELØNNING -->
+              <div class="form-group">
+                <label for="reward">Belønning</label>
+                <select id="reward" name="reward">
+                  <option value="supporter">Supporter (50 kr+) – Navn i credits + badge</option>
+                  <option value="fan" selected>Fan (100 kr+) – Tidlig beta-adgang</option>
+                  <option value="champion">Champion (250 kr+) – Custom snake skin</option>
+                  <option value="vip">VIP (500 kr+) – Design en game mode</option>
+                  <option value="legend">Legend (1000 kr+) – Alt + møde holdet</option>
+                </select>
+              </div>
+
+              <!-- NAVN -->
+              <div class="form-group">
+                <label for="name">Fulde navn *</label>
+                <input type="text" id="name" name="name" placeholder="Dit navn" required>
+              </div>
+
+              <!-- EMAIL -->
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="din@email.dk" required>
+              </div>
+
+              <!-- BESKED -->
+              <div class="form-group">
+                <label for="message">Støttende besked (valgfri)</label>
+                <textarea id="message" name="message" placeholder="Skriv en besked til holdet..."></textarea>
+              </div>
+
+              <!-- ANONYM -->
+              <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="anonym" name="anonym" style="width: auto; accent-color: #00c853;">
+                <label for="anonym" style="margin: 0; font-weight: normal; cursor: pointer;">Vis mig som anonym støtte</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="font-size: 17px; padding: 15px;">
+                Gennemfør donation 🎉
+              </button>
+              <p style="text-align: center; font-size: 0.8em; color: #999; margin-top: 12px;">
+                🔒 Sikker betaling – dine oplysninger behandles fortroligt.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- CAMPAIGN STATUS SIDEBAR -->
+        <div style="width: 280px; flex-shrink: 0;">
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="campaign-raised">Indsamlet i alt</div>
+            <div class="campaign-amount" style="font-size: 1.8em;">6.750 kr</div>
+            <div class="progress-bar-container" style="margin: 10px 0 5px;">
+              <div class="progress-bar" style="width: 67.5%"></div>
+            </div>
+            <div class="progress-label">67% af 10.000 kr mål</div>
+            <div class="campaign-stats" style="margin-bottom: 0;">
+              <div class="stat">
+                <div class="stat-number">142</div>
+                <div class="stat-label">Støtter</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Dage tilbage</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="color: #1a1a2e; margin-bottom: 12px; font-size: 1em;">Seneste støtter</h3>
+            <div id="recentDonors">
+              <div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #f0f0f0;">
+                <div style="width:36px; height:36px; background:#00c853; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#1a1a2e; flex-shrink:0;">M</div>
+                <div>
+                  <div style="font-weight:bold; font-size:0.9em;">Mads T.</div>
+                  <div style="font-size:0.8em; color:#999;">250 kr · 2 timer siden</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #f0f0f0;">
+                <div style="width:36px; height:36px; background:#16213e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#00c853; flex-shrink:0;">S</div>
+                <div>
+                  <div style="font-weight:bold; font-size:0.9em;">Sara K.</div>
+                  <div style="font-size:0.8em; color:#999;">100 kr · 5 timer siden</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; padding:8px 0;">
+                <div style="width:36px; height:36px; background:#e0e0e0; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#666; flex-shrink:0;">?</div>
+                <div>
+                  <div style="font-weight:bold; font-size:0.9em;">Anonym</div>
+                  <div style="font-size:0.8em; color:#999;">50 kr · 1 dag siden</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🐍 SnakeFund &copy; 2026 — Lavet med passion af ITL-studerende</p>
+    <p>
+      <a href="Omos.html">Om os</a> &nbsp;|&nbsp;
+      <a href="kontakt.html">Kontakt</a> &nbsp;|&nbsp;
+      <a href="forside.html">Forside</a>
+    </p>
+  </footer>
+
+  <script>
+    let selectedAmount = 100;
+
+    function selectAmount(btn, amount) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedAmount = amount;
+      document.getElementById('customAmount').value = '';
+    }
+
+    function clearAmountBtns() {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      selectedAmount = null;
+    }
+
+    function handleDonate(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amount = custom ? parseInt(custom) : selectedAmount;
+
+      if (!amount || amount < 1) {
+        alert('Vælg venligst et beløb.');
+        return;
+      }
+
+      document.getElementById('donateForm').style.display = 'none';
+      const msg = document.getElementById('thankYou');
+      msg.style.display = 'block';
+      msg.textContent = `🎉 Tusind tak for din donation på ${amount} kr! Du modtager en bekræftelse på e-mail.`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
