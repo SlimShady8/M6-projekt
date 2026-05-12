@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
-  <title>Tetris</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Tetris – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    .tetris-bg {
       background: #121216;
+      min-height: calc(100vh - 62px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 35px 20px 50px;
       color: white;
-      text-align: center;
-      font-family: Arial;
     }
-
     canvas {
       background: black;
       display: block;
-      margin: 20px auto;
+      border: 2px solid rgba(147, 51, 234, 0.5);
+      border-radius: 4px;
+      margin-top: 20px;
     }
-
-    a {
-      color: lightblue;
+    .tetris-score {
+      font-size: 1.5em;
+      color: #a855f7;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
   </style>
 </head>
-
 <body>
-<nav>
-  <a href="forside.html">Forside</a>
-  <a href="spil.html">Spil</a>
-  <a href="game.html">Tetris</a>
-</nav>
 
-  <h1>🎮 Tetris</h1>
-  <p>Brug piletasterne til at spille</p>
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
 
-  <canvas id="game" width="300" height="600"></canvas>
+  <div class="tetris-bg">
+    <h1 style="color:#a855f7; margin-bottom:5px;">🧩 Tetris</h1>
+    <p style="opacity:0.6; margin-bottom:10px;">Brug pil-taster. Space = hurtig ned.</p>
+    <div class="tetris-score">Score: <span id="scoreDisplay">0</span></div>
+    <canvas id="game" width="300" height="600"></canvas>
+    <p style="margin-top:20px; opacity:0.5; font-size:0.85em;">← <a href="spil.html" style="color:#a855f7; text-decoration:none;">Tilbage til spil-oversigten</a></p>
+  </div>
 
   <script src="game.js"></script>
 
-  <br>
-  <a href="index.html">← Tilbage</a>
-
-<script src="game.js"></script>
 </body>
 </html>
