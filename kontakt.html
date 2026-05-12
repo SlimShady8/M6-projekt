@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Kontakt os</h1>
+    <p>Har du spørgsmål, feedback eller idéer? Vi hører gerne fra dig!</p>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+
+        <!-- CONTACT FORM -->
+        <div style="flex:1; min-width:300px;">
+          <div class="card">
+            <h2 style="color:#1a1a2e; margin-bottom:20px;">Send os en besked</h2>
+
+            <div id="contact-success" class="alert alert-success">
+              ✓ Din besked er modtaget! Vi vender tilbage inden for 1-2 hverdage.
+            </div>
+
+            <form id="contactForm" onsubmit="handleContact(event)">
+              <div class="form-group">
+                <label for="c-name">Navn *</label>
+                <input type="text" id="c-name" placeholder="Dit fulde navn" required>
+              </div>
+
+              <div class="form-group">
+                <label for="c-email">E-mail *</label>
+                <input type="email" id="c-email" placeholder="din@email.dk" required>
+              </div>
+
+              <div class="form-group">
+                <label for="c-subject">Emne</label>
+                <select id="c-subject">
+                  <option value="">Vælg emne...</option>
+                  <option value="support">Spørgsmål om donation</option>
+                  <option value="bug">Fejl/bug i spillet</option>
+                  <option value="idea">Idé til spillet</option>
+                  <option value="press">Presse/samarbejde</option>
+                  <option value="other">Andet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="c-message">Besked *</label>
+                <textarea id="c-message" rows="5" placeholder="Skriv din besked her..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send besked</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div style="width:270px; flex-shrink:0;">
+
+          <div class="card" style="margin-bottom:20px;">
+            <h3 style="color:#1a1a2e; margin-bottom:15px; font-size:1em;">📬 Andre kontaktmuligheder</h3>
+
+            <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:15px;">
+              <div style="font-size:1.4em; flex-shrink:0;">📧</div>
+              <div>
+                <div style="font-weight:bold; font-size:0.9em; color:#1a1a2e;">E-mail</div>
+                <div style="font-size:0.85em; color:#666;">hej@snakefund.dk</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:15px;">
+              <div style="font-size:1.4em; flex-shrink:0;">💬</div>
+              <div>
+                <div style="font-weight:bold; font-size:0.9em; color:#1a1a2e;">Discord</div>
+                <div style="font-size:0.85em; color:#666;">discord.gg/snakefund</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:flex-start; gap:12px;">
+              <div style="font-size:1.4em; flex-shrink:0;">🕒</div>
+              <div>
+                <div style="font-weight:bold; font-size:0.9em; color:#1a1a2e;">Svartid</div>
+                <div style="font-size:0.85em; color:#666;">1–2 hverdage</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="color:#1a1a2e; margin-bottom:12px; font-size:1em;">❓ Hurtige svar</h3>
+            <ul style="list-style:none; padding:0; font-size:0.88em; line-height:2; color:#666;">
+              <li>→ <a href="belonner.html" style="color:#00c853; text-decoration:none;">Spørgsmål om belønninger</a></li>
+              <li>→ <a href="updates.html" style="color:#00c853; text-decoration:none;">Seneste opdateringer</a></li>
+              <li>→ <a href="Omos.html" style="color:#00c853; text-decoration:none;">Om holdet</a></li>
+              <li>→ <a href="donate.html" style="color:#00c853; text-decoration:none;">Donér nu</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🐍 SnakeFund &copy; 2026 — Lavet med passion af ITL-studerende</p>
+    <p>
+      <a href="Omos.html">Om os</a> &nbsp;|&nbsp;
+      <a href="kontakt.html">Kontakt</a> &nbsp;|&nbsp;
+      <a href="donate.html">Støt Nu</a>
+    </p>
+  </footer>
+
+  <script>
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
