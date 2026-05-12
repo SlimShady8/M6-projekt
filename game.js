@@ -107,6 +107,8 @@ function clearLines() {
   // score system
   if (linesCleared > 0) {
     score += [0, 100, 300, 500, 800][linesCleared];
+    const el = document.getElementById('scoreDisplay');
+    if (el) el.textContent = score;
   }
 }
 

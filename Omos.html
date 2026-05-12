@@ -1,51 +1,140 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="da">
 <head>
-  <title>About Us</title>
-  <link href='style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om os – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
   <nav>
-  <a href="forside.html">Forside</a>
-  <a href="spil.html">Spil</a>
-  <a href="Omos.html">Om os</a>
-</nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
 
-<div class="about-container">
-
-  <h1>Om os</h1>
-
-  <p>
-    Vi er en gruppe ITL-studerende, som arbejder med webudvikling og programmering. 
-    I dette projekt har vi haft fokus på at lære grundlæggende teknologier som HTML og CSS, 
-    samt hvordan man opbygger og strukturerer en hjemmeside.
-  </p>
-
-  <p>
-    Som en del af projektet har vi udviklet vores første spil, Tetris, som er blevet integreret 
-    på hjemmesiden. Spillet viser, hvordan vi kan kombinere forskellige teknologier for at skabe interaktive løsninger.
-  </p>
-
-  <p>
-    Gennem projektet har vi arbejdet med både design og funktionalitet, og vi har fået erfaring 
-    med at planlægge, udvikle og teste en digital løsning fra idé til færdigt produkt.
-  </p>
-
-  <p>
-    Dette projekt er vores første skridt ind i webudvikling, og vi ser frem til at udvikle vores 
-    færdigheder yderligere i fremtiden.
-  </p>
-
-</div>
-
-  <h2 class='destination'>1. Florence, Italy</h2>
-  <div class='description'>A city-size shrine to the Renaissance, Florence offers frescoes, sculptures, churches, palaces, and other monuments from the richest cultural flowering the world has known. Names from its dazzling historical past; Dante, Michelangelo, Galileo, Machiavelliare are some of the most resonant of the medieval age. <a href='https://www.nationalgeographic.com/travel/destination/florence' target='_blank'>Learn More</a>.
-    <h5>Top Attractions</h5>
-    <ul>
-      <li>Museums</li>
-      <li>Bike Tours</li>
-      <li>Historical Monuments</li>
-    </ul>
+  <div class="page-header">
+    <h1>Om os</h1>
+    <p>Vi er en gruppe ITL-studerende med en passion for spil og webudvikling.</p>
   </div>
+
+  <!-- MISSION -->
+  <section>
+    <div class="section-inner" style="max-width:800px;">
+      <h2 class="section-title">Vores Mission</h2>
+      <div class="card">
+        <p style="font-size:1.05em; line-height:1.8; color:#444;">
+          SnakeFund opstod som et skoleprojekt, men er hurtigt vokset til noget vi alle brænder for. Vi ønsker at vise, at studerende kan lave professionelle, fungerende produkter – og at crowdfunding kan bruges til at realisere idéer som ellers ville forblive på tegnebrættet.
+        </p>
+        <p style="font-size:1.05em; line-height:1.8; color:#444; margin-top:15px;">
+          Vores mål er ikke kun at lave et godt spil – det er at lære undervejs, at samarbejde som et rigtigt hold, og at levere noget vi er stolte af at vise frem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAMET -->
+  <section class="section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Mød Holdet</h2>
+      <div class="grid-3">
+
+        <div class="card team-card">
+          <div class="team-avatar">M</div>
+          <div class="team-name">Mads</div>
+          <div class="team-role">Lead Developer</div>
+          <div class="team-bio">Mads er hjernen bag Snake-spillet og backend-strukturen. Han koder mest i JavaScript og er altid klar til en udfordring.</div>
+        </div>
+
+        <div class="card team-card">
+          <div class="team-avatar">S</div>
+          <div class="team-name">Sathurrsan</div>
+          <div class="team-role">Frontend & Design</div>
+          <div class="team-bio">Sathurrsan har skabt det visuelle udtryk for SnakeFund. Han sørger for at siden ser god ud og er nem at bruge.</div>
+        </div>
+
+        <div class="card team-card">
+          <div class="team-avatar">A</div>
+          <div class="team-name">Andreas</div>
+          <div class="team-role">Content & Testing</div>
+          <div class="team-bio">Andreas tester alle features, skriver opdateringerne og sørger for at indholdet på siden er opdateret og klart.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIDSLINJE -->
+  <section>
+    <div class="section-inner" style="max-width:700px;">
+      <h2 class="section-title">Projektets tidslinje</h2>
+
+      <div style="position:relative; padding-left:30px; border-left:3px solid #e0e0e0;">
+
+        <div style="position:relative; margin-bottom:30px;">
+          <div style="position:absolute; left:-39px; top:4px; width:16px; height:16px; background:#00c853; border-radius:50%; border:3px solid white; box-shadow:0 0 0 2px #00c853;"></div>
+          <div style="font-size:0.82em; color:#999; margin-bottom:4px;">April 2026</div>
+          <strong>Idéen opstår</strong>
+          <p style="color:#666; font-size:0.9em; margin-top:4px;">Vi beslutter os for at lave en GoFundMe-kampagne for at finansiere et ordentligt Snake spil.</p>
+        </div>
+
+        <div style="position:relative; margin-bottom:30px;">
+          <div style="position:absolute; left:-39px; top:4px; width:16px; height:16px; background:#00c853; border-radius:50%; border:3px solid white; box-shadow:0 0 0 2px #00c853;"></div>
+          <div style="font-size:0.82em; color:#999; margin-bottom:4px;">15. april 2026</div>
+          <strong>Kampagnen lanceres</strong>
+          <p style="color:#666; font-size:0.9em; margin-top:4px;">SnakeFund.dk går live med vores første version af hjemmesiden.</p>
+        </div>
+
+        <div style="position:relative; margin-bottom:30px;">
+          <div style="position:absolute; left:-39px; top:4px; width:16px; height:16px; background:#00c853; border-radius:50%; border:3px solid white; box-shadow:0 0 0 2px #00c853;"></div>
+          <div style="font-size:0.82em; color:#999; margin-bottom:4px;">1. maj 2026</div>
+          <strong>100 støtter!</strong>
+          <p style="color:#666; font-size:0.9em; margin-top:4px;">Stor milepæl: 100 mennesker har doneret til projektet.</p>
+        </div>
+
+        <div style="position:relative; margin-bottom:30px;">
+          <div style="position:absolute; left:-39px; top:4px; width:16px; height:16px; background:#00c853; border-radius:50%; border:3px solid white; box-shadow:0 0 0 2px #00c853;"></div>
+          <div style="font-size:0.82em; color:#999; margin-bottom:4px;">8. maj 2026</div>
+          <strong>Beta live!</strong>
+          <p style="color:#666; font-size:0.9em; margin-top:4px;">Første spillbare version af Snake er tilgængelig for alle.</p>
+        </div>
+
+        <div style="position:relative;">
+          <div style="position:absolute; left:-39px; top:4px; width:16px; height:16px; background:#e0e0e0; border-radius:50%; border:3px solid white; box-shadow:0 0 0 2px #e0e0e0;"></div>
+          <div style="font-size:0.82em; color:#999; margin-bottom:4px;">Sommer 2026</div>
+          <strong style="color:#999;">Multiplayer (planlagt)</strong>
+          <p style="color:#aaa; font-size:0.9em; margin-top:4px;">Hvis vi når fundraising-målet, launcher vi online multiplayer.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-alt" style="text-align:center;">
+    <div class="section-inner">
+      <h2 style="color:#1a1a2e; font-size:1.6em; margin-bottom:10px;">Støt holdet bag SnakeFund</h2>
+      <p style="color:#666; max-width:400px; margin:0 auto 22px;">Alle donationer hjælper os med at nå vores mål og gøre projektet til en succes.</p>
+      <a href="donate.html" class="btn btn-primary" style="width:auto; padding:14px 35px; font-size:16px; display:inline-block;">Donér nu</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>🐍 SnakeFund &copy; 2026 — Lavet med passion af ITL-studerende</p>
+    <p>
+      <a href="Omos.html">Om os</a> &nbsp;|&nbsp;
+      <a href="kontakt.html">Kontakt</a> &nbsp;|&nbsp;
+      <a href="donate.html">Støt Nu</a>
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake – SnakeFund</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="forside.html">🐍 SnakeFund</a>
+    <div class="nav-links">
+      <a href="spil.html">Spil</a>
+      <a href="leaderboard.html">Highscore</a>
+      <a href="updates.html">Opdateringer</a>
+      <a href="belonner.html">Belønninger</a>
+      <a href="Omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="donate.html" class="nav-donate">Støt Nu</a>
+    </div>
+  </nav>
+
+  <div class="game-page-bg">
+    <div class="game-wrapper">
+
+      <!-- HUD -->
+      <div class="game-hud">
+        <div class="hud-item">
+          <div class="hud-label">Score</div>
+          <div class="hud-value" id="score">0</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">Highscore</div>
+          <div class="hud-value" id="high-score">0</div>
+        </div>
+        <div class="hud-item">
+          <a href="leaderboard.html" style="color:#00c853; font-size:0.8em; text-decoration:none;">🏆 Leaderboard</a>
+        </div>
+      </div>
+
+      <!-- CANVAS + OVERLAYS -->
+      <div class="game-canvas-container">
+        <canvas id="snakeCanvas" width="420" height="420"></canvas>
+
+        <!-- START OVERLAY -->
+        <div class="game-overlay" id="start-overlay">
+          <div class="overlay-icon">🐍</div>
+          <h2>Snake</h2>
+          <p>Styr ormen, spis mad og sæt highscore!</p>
+          <button class="btn-game" onclick="init()">Start Spil</button>
+        </div>
+
+        <!-- GAME OVER OVERLAY -->
+        <div class="game-overlay" id="gameover-overlay" style="display:none;">
+          <div class="overlay-icon">💀</div>
+          <h2>Game Over!</h2>
+          <p>Din score:</p>
+          <div class="final-score-display" id="final-score">0</div>
+          <button class="btn-game" onclick="init()">Spil igen</button>
+          <a href="leaderboard.html" style="color:rgba(255,255,255,0.6); font-size:0.85em; text-decoration:none; display:block; margin-top:12px;">
+            Se leaderboard →
+          </a>
+        </div>
+      </div>
+
+      <!-- KEYBOARD CONTROLS -->
+      <div class="controls-panel">
+        <div class="control-item">
+          <span class="key">W / ↑</span>
+          <span class="key-desc">Op</span>
+        </div>
+        <div class="control-item">
+          <span class="key">S / ↓</span>
+          <span class="key-desc">Ned</span>
+        </div>
+        <div class="control-item">
+          <span class="key">A / ←</span>
+          <span class="key-desc">Venstre</span>
+        </div>
+        <div class="control-item">
+          <span class="key">D / →</span>
+          <span class="key-desc">Højre</span>
+        </div>
+      </div>
+
+      <!-- MOBILE D-PAD -->
+      <div class="mobile-controls">
+        <div class="mobile-dpad">
+          <button class="dpad-btn dpad-up"    onclick="mobileDir(0,-1)">▲</button>
+          <button class="dpad-btn dpad-left"  onclick="mobileDir(-1,0)">◀</button>
+          <button class="dpad-btn dpad-down"  onclick="mobileDir(0,1)">▼</button>
+          <button class="dpad-btn dpad-right" onclick="mobileDir(1,0)">▶</button>
+        </div>
+      </div>
+
+      <!-- BACK LINK -->
+      <div style="margin-top: 25px;">
+        <a href="spil.html" style="color:rgba(255,255,255,0.4); font-size:0.85em; text-decoration:none;">
+          ← Tilbage til spil-oversigten
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="snake.js"></script>
+
+</body>
+</html>
